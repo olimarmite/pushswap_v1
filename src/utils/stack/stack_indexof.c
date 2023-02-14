@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   stack_indexof.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:10:54 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/13 03:03:45 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/13 03:04:01 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "stack.h"
 
-# include "../pushswap/pushswap.h"
-# include "stack/stack.h"
-# include <stdio.h> //Todo : Forbiden functions
-# include <unistd.h>
+/**
+ * Return the first index of [element] in [stack]
+ *
+ * Return -1 if [element] is not found.
+ */
+int	stack_indexof(int element, t_stack *stack)
+{
+	int	i;
 
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_fatal_error(t_pushswap *pushswap, char *error_msg);
-
-#endif
+	i = 0;
+	while (stack->content[i] != element)
+	{
+		if (i >= stack->item_count)
+		{
+			return (-1);
+		}
+		i++;
+	}
+	return (i);
+}

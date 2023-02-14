@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   pushswap_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:10:54 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/14 09:54:25 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/14 10:04:13 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "pushswap.h"
 
-# include "../pushswap/pushswap.h"
-# include "stack/stack.h"
-# include <stdio.h> //Todo : Forbiden functions
-# include <unistd.h>
-
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_fatal_error(t_pushswap *pushswap, char *error_msg);
-
-#endif
+void	pushswap_free(t_pushswap *pushswap)
+{
+	free(pushswap->stack_a.content);
+	free(pushswap->stack_b.content);
+	free(pushswap->operations_list.content);
+	pushswap->stack_a.content = NULL;
+	pushswap->stack_b.content = NULL;
+	pushswap->operations_list.content = NULL;
+}

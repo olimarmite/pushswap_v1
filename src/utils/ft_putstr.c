@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:10:54 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/14 09:48:17 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/14 09:59:23 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "utils.h"
 
-# include "../pushswap/pushswap.h"
-# include "stack/stack.h"
-# include <stdio.h> //Todo : Forbiden functions
-# include <unistd.h>
+void	ft_putstr_fd(char *str, int fd)
+{
+	int	size;
 
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_fatal_error(t_pushswap *pushswap, char *error_msg);
-
-#endif
+	size = 0;
+	while (str[size])
+	{
+		size ++;
+	}
+	write(fd, str, size);
+}

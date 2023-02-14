@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   stack_print.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:10:54 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/13 03:02:40 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/13 03:03:05 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "stack.h"
 
-# include "../pushswap/pushswap.h"
-# include "stack/stack.h"
-# include <stdio.h> //Todo : Forbiden functions
-# include <unistd.h>
+/**
+ * @brief Display [stack] in standard output
+ *
+ */
+void	stack_print(t_stack *stack)
+{
+	int	i;
 
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_fatal_error(t_pushswap *pushswap, char *error_msg);
-
-#endif
+	i = 0;
+	printf("["); // TODO: Forbiden function
+	if (stack->item_count >= 1)
+	{
+		printf("%i", stack->content[i]);
+		i++;
+	}
+	while (i < stack->item_count)
+	{
+		printf(",%i", stack->content[i]); // TODO: Forbiden function
+		i++;
+	}
+	printf("]"); // TODO: Forbiden function
+}

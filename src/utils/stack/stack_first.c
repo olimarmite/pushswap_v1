@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   stack_first.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:10:54 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/13 23:16:49 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/13 23:20:49 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "stack.h"
 
-# include "../pushswap/pushswap.h"
-# include "stack/stack.h"
-# include <stdio.h> //Todo : Forbiden functions
-# include <unistd.h>
-
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-void	ft_fatal_error(t_pushswap *pushswap, char *error_msg);
-
-#endif
+/**
+ * @brief Return first element of [stack]
+ *
+ * @return return -1 if the stack is empty;
+ */
+int	stack_first(t_stack *stack)
+{
+	if (stack->item_count <= 0)
+	{
+		return (-1);
+	}
+	return (stack->content[0]);
+}

@@ -6,29 +6,30 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:24:21 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/13 02:54:50 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:07:21 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils/utils.h"
+#include "pushswap/pushswap.h"
 
 int	main(void)
 {
-	t_stack stack;
+	t_pushswap	pushswap;
 
-	stack = stack_create(6);
-	if (stack.capacity == 0)
-		return (1);
-	// stack_add(5, &stack);
-	// stack_add(4, &stack);
-	// stack_add(3, &stack);
-	// stack_add(2, &stack);
-	// stack_add(1, &stack);
-	//stack_remove(1, &stack);
-	//stack_remove(0, &stack);
-	stack_print(&stack);
-	printf("\n");
-	stack_insert(42, 0, &stack);
-	stack_print(&stack);
+	pushswap = pushswap_create(10);
+	stack_add(1, &pushswap.stack_a);
+	stack_add(2, &pushswap.stack_a);
+	stack_add(3, &pushswap.stack_a);
+	stack_add(4, &pushswap.stack_a);
+	stack_add(5, &pushswap.stack_a);
+	stack_print(&pushswap.stack_a);
+	pushswap_rotate(1, stack_id_a, &pushswap);
+	stack_print(&pushswap.stack_a);
+	pushswap_push(stack_id_a, &pushswap);
+	stack_print(&pushswap.stack_a);
+	stack_print(&pushswap.stack_b);
+	//ft_fatal_error(&pushswap, NULL);
+	pushswap_free(&pushswap);
 	return (0);
 }
