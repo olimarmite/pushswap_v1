@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:07:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:11:16 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:27:44 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ typedef enum e_operation
 	sb,
 	ss
 }				t_operation;
+
 typedef enum e_stack_id
 {
 	stack_id_a,
 	stack_id_b
 }				t_stack_id;
+
 typedef struct s_pushswap
 {
 	t_stack		stack_a;

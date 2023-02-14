@@ -6,12 +6,13 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:24:21 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:07:21 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:01:54 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils/utils.h"
 #include "pushswap/pushswap.h"
+#include "exception_management/exception_management.h"
 
 int	main(void)
 {
@@ -29,7 +30,7 @@ int	main(void)
 	pushswap_push(stack_id_a, &pushswap);
 	stack_print(&pushswap.stack_a);
 	stack_print(&pushswap.stack_b);
-	//ft_fatal_error(&pushswap, NULL);
-	pushswap_free(&pushswap);
+	ft_fatal_error(&pushswap, NULL);
+	//pushswap_free(&pushswap);
 	return (0);
 }

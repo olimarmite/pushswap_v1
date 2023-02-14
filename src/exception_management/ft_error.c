@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:59:13 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/14 09:27:52 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/14 11:01:14 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+# include "exception_management.h"
 
-# include "stack/stack.h"
-# include <stdio.h> //Todo : Forbiden functions
-# include <unistd.h>
+void	ft_fatal_error(t_pushswap *pushswap, char *error_msg)
+{
+	if (error_msg == NULL)
+		error_msg = "Error\n";
+	pushswap_free(pushswap);
+	ft_putstr_fd(error_msg, 2);
+	exit(1);
+}
 
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-
-#endif
