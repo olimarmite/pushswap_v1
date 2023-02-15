@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:01:22 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 02:32:06 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:55:04 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
  * Rotate the [stack] in order of [reverse]
  *
  * if [reverse] is !0,
- * the first element of the stack is moved to the last position
+ * the last element of the stack is moved to the first position
  *
  * else,
- * the last element of the stack is moved to the first position
+ * the first element of the stack is moved to the last position
  *
  * Return 0 if element had been moved;
  */
@@ -27,7 +27,7 @@ int	stack_rotate(int reverse, t_stack *stack)
 {
 	if (stack->item_count <= 1)
 		return (1);
-	if (reverse != 0)
+	if (reverse == 0)
 	{
 		stack_insert(stack_first(stack), stack->item_count, stack);
 		stack_remove(0, stack);

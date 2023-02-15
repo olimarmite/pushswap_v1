@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:17:06 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:17:07 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:54:48 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
  * Rotate the [stack_id] in order of [reverse]
  *
  * if [reverse] is !0,
- * the first element of the stack is moved to the last position
+ * the last element of the stack is moved to the first position
  *
  * else,
- * the last element of the stack is moved to the first position
+ * the first element of the stack is moved to the last position
  *
  * Return 0 if element had been moved;
  * Return 1 if no elements had been moved;
@@ -43,5 +43,5 @@ int	pushswap_rotate(int reverse, t_stack_id stack_id, t_pushswap *pushswap)
 	}
 	if (reverse)
 		operation += 3;
-	return (pushswap_add_operation(operation, pushswap));
+	return (pushswap_operations_add(operation, pushswap));
 }

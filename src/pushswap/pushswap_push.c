@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:18:27 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:18:29 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:29:30 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	pushswap_push(t_stack_id to_stack_id, t_pushswap *pushswap)
 		if (stack_push(&pushswap->stack_a, &pushswap->stack_b) != 0)
 			return (1);
 	}
-	return (pushswap_add_operation(operation, pushswap));
+	return (pushswap_operations_add(operation, pushswap));
 }

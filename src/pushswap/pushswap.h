@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:07:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 10:27:44 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/14 21:33:19 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int			pushswap_rotate(int reverse, t_stack_id stack_id,
 int			pushswap_swap(t_stack_id stack_id, t_pushswap *pushswap);
 int			pushswap_push(t_stack_id to_stack_id, t_pushswap *pushswap);
 void		pushswap_free(t_pushswap *pushswap);
-int			pushswap_add_operation(t_operation operation, t_pushswap *pushswap);
+int			pushswap_operations_add(t_operation operation,
+				t_pushswap *pushswap);
+void	pushswap_operations_print(t_pushswap *pushswap);
 
 #endif
