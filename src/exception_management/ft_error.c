@@ -6,11 +6,11 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 09:27:52 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 11:01:14 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:27:52 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "exception_management.h"
+#include "exception_management.h"
 
 void	ft_fatal_error(t_pushswap *pushswap, char *error_msg)
 {
@@ -20,4 +20,3 @@ void	ft_fatal_error(t_pushswap *pushswap, char *error_msg)
 	ft_putstr_fd(error_msg, 2);
 	exit(1);
 }
-

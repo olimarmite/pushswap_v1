@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:24:21 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/15 05:31:31 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:24:30 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@ int	main(int argc, char **argv)
 		pushswap_free(&pushswap);
 		return (0);
 	}
-	// stack_add(1, &pushswap.stack_a);
-	// stack_add(2, &pushswap.stack_a);
-	// stack_add(3, &pushswap.stack_a);
-	// stack_add(4, &pushswap.stack_a);
-	// stack_add(5, &pushswap.stack_a);
+	pushswap_index_stack(&pushswap.stack_a);
 	stack_print(&pushswap.stack_a);
 	pushswap_rotate(0, stack_id_a, &pushswap);
 	stack_print(&pushswap.stack_a);
@@ -39,7 +35,6 @@ int	main(int argc, char **argv)
 	stack_print(&pushswap.stack_a);
 	stack_print(&pushswap.stack_b);
 	pushswap_operations_print(&pushswap);
-	//ft_fatal_error(&pushswap, NULL);
 	pushswap_free(&pushswap);
 	return (0);
 }
@@ -52,7 +47,7 @@ int	parse_args(int argc, char **argv, t_pushswap *pushswap)
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_atoi(argv[i], &nb))
+		if (ft_atoi(argv[i], &nb) == 0)
 		{
 			if (stack_indexof(nb, &pushswap->stack_a) != -1)
 			{
@@ -60,7 +55,6 @@ int	parse_args(int argc, char **argv, t_pushswap *pushswap)
 					"Invalid Arguments\nNumbers must be unique");
 				return (2);
 			}
-
 			stack_add(nb, &pushswap->stack_a);
 		}
 		else

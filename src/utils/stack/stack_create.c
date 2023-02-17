@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:55:05 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 03:52:14 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:29:09 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ t_stack	stack_create(int capacity, int id)
 	stack.id = id;
 	return (stack);
 }
-

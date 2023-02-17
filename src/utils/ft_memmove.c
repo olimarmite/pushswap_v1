@@ -6,18 +6,17 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 22:51:41 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/13 02:49:45 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:25:18 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 
-
 void	*ft_memmove(int *dest, const int *src, size_t n)
 {
 	size_t	i;
-	int	*d;
+	int		*d;
 
 	d = dest;
 	if ((dest == NULL && src == NULL))

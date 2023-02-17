@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:25:08 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 06:09:57 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/17 08:21:54 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int		stack_rotate(int reverse, t_stack *stack);
 int		stack_swap(t_stack *stack);
 int		stack_push(t_stack *stack, t_stack *toStack);
 int		stack_grow(t_stack *stack);
+void	stack_free(t_stack *stack);
 
 #endif
