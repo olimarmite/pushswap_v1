@@ -6,12 +6,14 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:24:21 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/17 10:24:30 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/21 04:56:31 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils/utils.h"
 #include "pushswap/pushswap.h"
+#include "sorter/sorter.h"
+
 #include "exception_management/exception_management.h"
 
 int	parse_args(int argc, char **argv, t_pushswap *pushswap);
@@ -26,14 +28,7 @@ int	main(int argc, char **argv)
 		pushswap_free(&pushswap);
 		return (0);
 	}
-	pushswap_index_stack(&pushswap.stack_a);
-	stack_print(&pushswap.stack_a);
-	pushswap_rotate(0, stack_id_a, &pushswap);
-	stack_print(&pushswap.stack_a);
-	pushswap_push(stack_id_b, &pushswap);
-	pushswap_push(stack_id_a, &pushswap);
-	stack_print(&pushswap.stack_a);
-	stack_print(&pushswap.stack_b);
+	sort_main(&pushswap);
 	pushswap_operations_print(&pushswap);
 	pushswap_free(&pushswap);
 	return (0);
