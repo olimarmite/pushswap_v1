@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   stack_add_multiple.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 14:05:42 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 06:20:33 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/24 09:02:44 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/24 09:20:03 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "stack.h"
+
 /**
- * Returns the larger of two numbers. [nb_a] [nb_b]
+ * @brief Add element [count] time at the end of [stack]
+ *
+ * @return return 0 if success;
  */
-int	ft_max(int nb_a, int nb_b)
+int	stack_add_multiple(int element, int count, t_stack *stack)
 {
-	if (nb_a > nb_b)
+	int	i;
+
+	i = 0;
+	while (i < count)
 	{
-		return (nb_a);
+		if (stack_add(element, stack) != 0)
+		{
+			return (1);
+		}
 	}
-	else
-	{
-		return (nb_b);
-	}
+	return (0);
 }

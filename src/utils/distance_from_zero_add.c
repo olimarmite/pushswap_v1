@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   distance_from_zero_add.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 14:05:42 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 06:20:33 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/24 08:40:19 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/24 08:43:13 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * Returns the larger of two numbers. [nb_a] [nb_b]
- */
-int	ft_max(int nb_a, int nb_b)
+int	distance_from_zero_add(int nb_in, int nb_add)
 {
-	if (nb_a > nb_b)
+	if (nb_in < 0)
 	{
-		return (nb_a);
+		nb_in -= nb_add;
 	}
 	else
 	{
-		return (nb_b);
+		nb_in += nb_add;
 	}
+	return (nb_in);
 }

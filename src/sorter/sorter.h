@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:06:57 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 04:56:48 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:25:11 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,6 @@ int		proximity_sort(t_pushswap *pushswap);
 int		double_goto_index(t_move move, t_pushswap *pushswap);
 void	goto_index(int index, int reverse,
 			t_stack_id stack_id, t_pushswap *pushswap);
+int		double_goto_best_move(t_move move, t_pushswap *pushswap);
+
 #endif

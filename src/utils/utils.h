@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/21 14:52:21 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:14:07 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ void	ft_putstr_fd(char *str, int fd);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *nptr, int *nbr);
 int		ft_max(int nb_a, int nb_b);
+int		ft_min(int nb_a, int nb_b);
+int		distance_from_zero_add(int nb_in, int nb_add);
+int		ft_abs(int number);
 
 #endif

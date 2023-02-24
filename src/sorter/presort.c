@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:52:22 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/21 13:52:23 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:31:08 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	presort(int chunk_count, t_pushswap *pushswap)
 	chunk_b.max = chunk_b.min + chunk_size;
 	while (pushswap->stack_a.item_count > 0)
 	{
-		move_two_chunks(chunk_a, chunk_b, pushswap);
+		move_two_chunks(chunk_b, chunk_a, pushswap);
 		chunk_a.max = chunk_a.min;
 		chunk_a.min -= chunk_size;
 		chunk_b.min = chunk_b.max;

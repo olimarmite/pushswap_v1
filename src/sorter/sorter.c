@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:07:48 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 05:31:42 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:29:05 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	sort_main(t_pushswap *pushswap)
 {
 
-	presort(5, pushswap);
+	presort(20, pushswap);
 	//printf("\n[%d]\n", calc_move_cost(get_t_move(0, 1), 1, 0, pushswap));
 	proximity_sort(pushswap);
 	return (0);

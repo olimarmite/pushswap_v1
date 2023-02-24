@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_max.c                                           :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 14:05:42 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 06:20:33 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/24 09:10:35 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/24 09:13:51 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * Returns the larger of two numbers. [nb_a] [nb_b]
+ * Return absolute value of [number]
  */
-int	ft_max(int nb_a, int nb_b)
+int	ft_abs(int number)
 {
-	if (nb_a > nb_b)
-	{
-		return (nb_a);
-	}
-	else
-	{
-		return (nb_b);
-	}
+	if (number < 0)
+		return (number * (-1));
+	return (number);
 }

@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:25:08 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/21 18:25:46 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:20:16 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int		stack_push(t_stack *stack, t_stack *toStack);
 int		stack_grow(t_stack *stack);
 void	stack_free(t_stack *stack);
 int		stack_max_index(t_stack *stack);
-int		double_goto_best_move();
+int		stack_add_multiple(int element, int count, t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:07:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 04:46:32 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:15 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int			pushswap_operations_add(t_operation operation,
 void		pushswap_operations_print(t_pushswap *pushswap);
 void		pushswap_index_stack(t_stack *input_stack);
 t_stack		*pushswap_stack_from_id(t_stack_id stack_id, t_pushswap *pushswap);
+void		pushswap_operations_reduce(t_pushswap *pushswap);
 
 #endif
