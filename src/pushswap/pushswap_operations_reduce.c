@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 05:39:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 10:54:43 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:40:29 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	pushswap_operations_reduce(t_pushswap *pushswap)
 		if (count_ra_rb(pushswap->operations_list.content[i],
 				&ra_count, &rb_count) != 0)
 		{
-
 			generate_operations(ra_count, rb_count, &reduced_operations);
 			ra_count = 0;
 			rb_count = 0;

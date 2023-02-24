@@ -35,6 +35,8 @@ SRCS := \
 	utils/stack/stack_remove.c				\
 	utils/stack/stack_create.c				\
 	utils/stack/stack_max_index.c			\
+	utils/stack/stack_min_index.c			\
+	utils/stack/stack_max.c					\
 	utils/stack/stack_add_multiple.c		\
 	utils/ft_max.c							\
 	utils/ft_min.c							\
@@ -44,7 +46,7 @@ SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 CC	:= gcc
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Wextra -Werror
 CPPFLAGS := -I .
 MAKEFLAGS   += --no-print-directory
 
