@@ -14,7 +14,9 @@ SRCS := \
 	pushswap/pushswap_operations_add.c		\
 	pushswap/pushswap_push.c				\
 	pushswap/pushswap_swap.c				\
+	pushswap/pushswap_stack_from_id.c		\
 	sorter/sorter.c							\
+	sorter/presort.c						\
 	utils/ft_memmove.c						\
 	utils/ft_isdigit.c						\
 	utils/ft_putstr.c						\
@@ -29,7 +31,10 @@ SRCS := \
 	utils/stack/stack_last.c				\
 	utils/stack/stack_free.c				\
 	utils/stack/stack_remove.c				\
-	utils/stack/stack_create.c
+	utils/stack/stack_create.c				\
+	utils/stack/stack_max_index.c		\
+	utils/ft_max.c
+
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 

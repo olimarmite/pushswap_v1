@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/15 05:31:25 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:52:21 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	*ft_memmove(int *dest, const int *src, size_t n);
 void	ft_putstr_fd(char *str, int fd);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *nptr, int *nbr);
+int		ft_max(int nb_a, int nb_b);
 
 #endif
