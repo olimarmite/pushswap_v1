@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 09:02:44 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 09:20:03 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:39:27 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	stack_add_multiple(int element, int count, t_stack *stack)
 		{
 			return (1);
 		}
+		i++;
 	}
 	return (0);
 }

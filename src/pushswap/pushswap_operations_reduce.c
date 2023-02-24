@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 05:39:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 09:19:49 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:54:43 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,24 @@ void	pushswap_operations_reduce(t_pushswap *pushswap)
 	i = 0;
 	ra_count = 0;
 	rb_count = 0;
-	reduced_operations = pushswap->operations_list;
-
+	reduced_operations = stack_create(pushswap->operations_list.capacity,
+			pushswap->operations_list.id);
 	while (i < pushswap->operations_list.item_count)
 	{
 		if (count_ra_rb(pushswap->operations_list.content[i],
 				&ra_count, &rb_count) != 0)
 		{
+
 			generate_operations(ra_count, rb_count, &reduced_operations);
 			ra_count = 0;
 			rb_count = 0;
 			stack_add(pushswap->operations_list.content[i],
 				&reduced_operations);
 		}
+		i++;
 	}
+	stack_free(&pushswap->operations_list);
+	pushswap->operations_list = reduced_operations;
 }
 
 /**
@@ -49,7 +53,7 @@ void	pushswap_operations_reduce(t_pushswap *pushswap)
  */
 static int	count_ra_rb(t_operation operation, int *ra_count, int *rb_count)
 {
-	if (operation >= ra && operation <= rrr)
+	if (operation < ra || operation > rrr)
 		return (1);
 
 	if (operation == ra)
@@ -67,8 +71,8 @@ static int	count_ra_rb(t_operation operation, int *ra_count, int *rb_count)
 	}
 	else if (operation == rrr)
 	{
-		(*rb_count)--;
 		(*ra_count)--;
+		(*rb_count)--;
 	}
 	return (0);
 }
@@ -86,7 +90,7 @@ static void	generate_operations(int ra_count, int rb_count,
 	}
 	else if (ra_count < 0 && rb_count < 0)
 	{
-		mutual = ft_max(ra_count, rb_count);
+		mutual = ft_abs(ft_max(ra_count, rb_count));
 		stack_add_multiple(rrr, mutual, reduced_operations);
 	}
 	ra_count = distance_from_zero_add(ra_count, mutual * (-1));
