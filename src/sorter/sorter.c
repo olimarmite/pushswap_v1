@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:07:48 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 12:55:24 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:19:30 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 
 int	sort_main(t_pushswap *pushswap)
 {
+	int len;
+	int i = 0;
 	presort(20, pushswap);
-	proximity_sort(pushswap);
-	pushswap_operations_reduce(pushswap);
+	// proximity_sort(pushswap);
+	len = pushswap->stack_b.item_count;
+	while (i < len)
+	{
+		cost_based_sort(pushswap);
+		pushswap_push(stack_id_a, pushswap);
+		i++;
+	}
+	// pushswap_operations_reduce(pushswap);
 	return (0);
 }
 
@@ -39,6 +48,38 @@ int	proximity_sort(t_pushswap *pushswap)
 
 	return (0);
 }
+
+int	cost_based_sort(t_pushswap *pushswap)
+{
+	int		smallest_cost;
+	int		smallest_cost_elem;
+	int		current_cost;
+	int		i;
+
+	current_cost = -1;
+	smallest_cost = -1;
+	smallest_cost_elem = -1;
+	i = 0;
+	while (i < pushswap->stack_b.item_count)
+	{
+		current_cost = double_goto_best_move_op_count(
+				get_t_move(get_correct_index(pushswap->stack_b.content[i],
+						&pushswap->stack_a), i), pushswap);
+		if (smallest_cost_elem == -1 || current_cost < smallest_cost)
+		{
+			smallest_cost = current_cost;
+			smallest_cost_elem = i;
+		}
+		i++;
+	}
+	if (smallest_cost != -1)
+		double_goto_index(
+			get_t_move(
+				get_correct_index(pushswap->stack_b.content[smallest_cost_elem],
+					&pushswap->stack_a), smallest_cost_elem), pushswap);
+	return (0);
+}
+
 
 int	get_correct_index(int element, t_stack *stack)
 {
@@ -114,7 +155,6 @@ int	double_goto_best_move(t_move move, t_pushswap *pushswap)
 	reverse = 0;
 	best_reverse = 0;
 	best_instructions_count = -1;
-
 	while (reverse <= 3)
 	{
 		current_instructions_count = calc_move_to_a_cost(move,
@@ -130,6 +170,27 @@ int	double_goto_best_move(t_move move, t_pushswap *pushswap)
 	return (best_reverse);
 }
 
+int	double_goto_best_move_op_count(t_move move, t_pushswap *pushswap)
+{
+	int	reverse;
+	int	best_instructions_count;
+	int	current_instructions_count;
+
+	reverse = 0;
+	best_instructions_count = -1;
+	while (reverse <= 3)
+	{
+		current_instructions_count = calc_move_to_a_cost(move,
+				reverse & 1, reverse >> 1, pushswap);
+		if ((best_instructions_count == -1)
+			|| current_instructions_count <= best_instructions_count)
+		{
+			best_instructions_count = current_instructions_count;
+		}
+		reverse ++;
+	}
+	return (best_instructions_count);
+}
 
 int	calc_move_to_a_cost(
 	t_move move,
