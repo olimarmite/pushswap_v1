@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:07:48 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 15:19:30 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:30:51 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@ int	sort_main(t_pushswap *pushswap)
 {
 	int len;
 	int i = 0;
-	presort(20, pushswap);
-	// proximity_sort(pushswap);
+	presort(6, pushswap);
+//	proximity_sort(pushswap);
 	len = pushswap->stack_b.item_count;
 	while (i < len)
 	{
 		cost_based_sort(pushswap);
-		pushswap_push(stack_id_a, pushswap);
 		i++;
 	}
-	// pushswap_operations_reduce(pushswap);
+	//double_goto_index(get_t_move(0,0), pushswap);
+	best_goto_index(stack_min_index(&pushswap->stack_a), stack_id_a, pushswap);
+	pushswap_operations_reduce(pushswap);
 	return (0);
 }
 
@@ -73,10 +74,15 @@ int	cost_based_sort(t_pushswap *pushswap)
 		i++;
 	}
 	if (smallest_cost != -1)
+	{
+
 		double_goto_index(
 			get_t_move(
 				get_correct_index(pushswap->stack_b.content[smallest_cost_elem],
 					&pushswap->stack_a), smallest_cost_elem), pushswap);
+		pushswap_push(stack_id_a, pushswap);
+	}
+
 	return (0);
 }
 
@@ -94,7 +100,7 @@ int	get_correct_index(int element, t_stack *stack)
 		return (0);
 	while (i < stack->item_count)
 	{
-		if (stack->content[i] > element)
+		if (stack->content[i] >= element)
 		{
 			if (stack->content[i] < last_bigger || last_bigger == -1)
 			{
@@ -105,7 +111,11 @@ int	get_correct_index(int element, t_stack *stack)
 		i++;
 	}
 	if (last_bigger_index == -1)
+	{
+		printf("ELEMENT : %d, index : %d\n", element, stack_min_index(stack));
+		stack_print(stack);
 		return (stack_min_index(stack));
+	}
 	return (last_bigger_index);
 }
 
@@ -113,6 +123,8 @@ int	double_goto_index(t_move move, t_pushswap *pushswap)
 {
 	int	reverse;
 
+	if (move.index_a == -1 || move.index_b == -1)
+		return (-1);
 	reverse = double_goto_best_move(move, pushswap);
 	goto_index(move.index_a, reverse & 1, stack_id_a, pushswap);
 	goto_index(move.index_b, reverse >> 1, stack_id_b, pushswap);
@@ -143,6 +155,20 @@ void	goto_index(int index, int reverse,
 			i++;
 		}
 	}
+}
+
+void	best_goto_index(int index, t_stack_id stack_id, t_pushswap *pushswap)
+{
+	int		reverse;
+	t_stack	*stack;
+
+	reverse = 0;
+	stack = pushswap_stack_from_id(stack_id, pushswap);
+	if (index * 2 > stack->capacity)
+	{
+		reverse = 1;
+	}
+	goto_index(index, reverse, stack_id, pushswap);
 }
 
 int	double_goto_best_move(t_move move, t_pushswap *pushswap)

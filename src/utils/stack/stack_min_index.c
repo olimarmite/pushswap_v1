@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:04:12 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 12:48:32 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:17:18 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	stack_min_index(t_stack *stack)
 	i = 0;
 	index = 0;
 	min = stack->content[i];
-	while (i <= stack->item_count)
+	while (i < stack->item_count)
 	{
 		if (stack->content[i] < min)
 		{

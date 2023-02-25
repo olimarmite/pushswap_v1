@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 05:39:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/24 11:40:29 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:37:26 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,28 @@ void	pushswap_operations_reduce(t_pushswap *pushswap)
 	int		i;
 	int		ra_count;
 	int		rb_count;
-	t_stack	reduced_operations;
+	t_stack	reduced_op;
 
 	i = 0;
 	ra_count = 0;
 	rb_count = 0;
-	reduced_operations = stack_create(pushswap->operations_list.capacity,
+	reduced_op = stack_create(pushswap->operations_list.capacity,
 			pushswap->operations_list.id);
 	while (i < pushswap->operations_list.item_count)
 	{
 		if (count_ra_rb(pushswap->operations_list.content[i],
 				&ra_count, &rb_count) != 0)
 		{
-			generate_operations(ra_count, rb_count, &reduced_operations);
+			generate_operations(ra_count, rb_count, &reduced_op);
 			ra_count = 0;
 			rb_count = 0;
-			stack_add(pushswap->operations_list.content[i],
-				&reduced_operations);
+			stack_add(pushswap->operations_list.content[i], &reduced_op);
 		}
 		i++;
 	}
+	generate_operations(ra_count, rb_count, &reduced_op);
 	stack_free(&pushswap->operations_list);
-	pushswap->operations_list = reduced_operations;
+	pushswap->operations_list = reduced_op;
 }
 
 /**

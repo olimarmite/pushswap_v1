@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:04:12 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/21 17:56:35 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/25 21:17:39 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	stack_max_index(t_stack *stack)
 	i = 0;
 	index = 0;
 	max = stack->content[i];
-	while (i <= stack->item_count)
+	while (i < stack->item_count)
 	{
 		if (stack->content[i] > max)
 		{
