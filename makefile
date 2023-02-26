@@ -45,8 +45,8 @@ SRCS := \
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-CC	:= gcc
-CFLAGS := -Wall -Wextra -Werror
+CC	:= cc
+CFLAGS := -Wall -Wextra -Werror -g
 CPPFLAGS := -I .
 MAKEFLAGS   += --no-print-directory
 
@@ -77,5 +77,8 @@ re:
 	$(MAKE) fclean
 	$(MAKE) all
 
-.PHONY: clean fclean re
+malloc_test: $(OBJS)
+	$(CC) $(OBJS) -fsanitize=undefined -rdynamic -o $@ -L. -lmallocator
+
+.PHONY: clean fclean re malloc_test
 .SILENT:

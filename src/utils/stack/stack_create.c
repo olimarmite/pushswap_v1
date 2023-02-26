@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:55:05 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/17 10:29:09 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:17:42 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 /**
  * @brief Create empty stack with a maximum [capacity]
  *
- * @return return t_stack or null in case of error
+ * Return t_stack
+ * Return t_stack with capacity of 0 in case of error
  */
 t_stack	stack_create(int capacity, int id)
 {
@@ -26,6 +27,8 @@ t_stack	stack_create(int capacity, int id)
 		content = malloc(capacity * sizeof(int));
 		if (content)
 			content[0] = -1;
+		else
+			capacity = 0;
 	}
 	else
 	{

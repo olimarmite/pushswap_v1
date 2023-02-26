@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 03:52:59 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/14 06:09:42 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:13:47 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	stack_grow(t_stack *stack)
 	int	i;
 	int	*old_list;
 
+	if (stack->capacity == 0)
+		return (-1);
 	i = 0;
 	old_list = stack->content;
 	stack->capacity = 2 * stack->capacity;
