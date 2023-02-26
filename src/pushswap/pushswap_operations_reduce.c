@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 05:39:39 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/25 21:37:26 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:35:35 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static int	count_ra_rb(t_operation operation, int *ra_count, int *rb_count)
 {
 	if (operation < ra || operation > rrr)
 		return (1);
-
 	if (operation == ra)
 		(*ra_count)++;
 	else if (operation == rra)

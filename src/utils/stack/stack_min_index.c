@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:04:12 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/25 21:17:18 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:34:51 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	stack_min_index(t_stack *stack)
 	int	i;
 	int	index;
 	int	min;
-
 
 	if (stack->item_count <= 0)
 		return (-1);

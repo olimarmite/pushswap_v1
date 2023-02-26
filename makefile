@@ -7,6 +7,7 @@ SRCS := \
 	main.c									\
 	exception_management/ft_error.c			\
 	pushswap/pushswap_create.c				\
+	pushswap/pushswap_copy.c				\
 	pushswap/pushswap_operations_print.c	\
 	pushswap/pushswap_rotate.c				\
 	pushswap/pushswap_index_stack.c			\
@@ -18,6 +19,10 @@ SRCS := \
 	pushswap/pushswap_operations_reduce.c	\
 	sorter/sorter.c							\
 	sorter/presort.c						\
+	sorter/sort_utils.c						\
+	sorter/cost_sort.c						\
+	sorter/sort_small.c						\
+	sorter/sort_variator.c					\
 	utils/ft_memmove.c						\
 	utils/ft_isdigit.c						\
 	utils/ft_putstr.c						\
@@ -34,9 +39,11 @@ SRCS := \
 	utils/stack/stack_free.c				\
 	utils/stack/stack_remove.c				\
 	utils/stack/stack_create.c				\
+	utils/stack/stack_copy.c				\
 	utils/stack/stack_max_index.c			\
 	utils/stack/stack_min_index.c			\
 	utils/stack/stack_max.c					\
+	utils/stack/stack_min.c					\
 	utils/stack/stack_add_multiple.c		\
 	utils/ft_max.c							\
 	utils/ft_min.c							\

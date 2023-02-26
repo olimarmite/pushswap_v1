@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 19:24:21 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/26 17:57:07 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:17:36 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ int	main(int argc, char **argv)
 		pushswap_free(&pushswap);
 		return (0);
 	}
-	sort_main(&pushswap);
+	//sort_main(&pushswap);
+	if (sort_variator(&pushswap) == -1)
+		ft_fatal_error(&pushswap, "Malloc Error - Variator");
 	pushswap_operations_print(&pushswap);
 	pushswap_free(&pushswap);
 	return (0);

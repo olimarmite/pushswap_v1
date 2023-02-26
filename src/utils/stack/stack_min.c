@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_max.c                                        :+:      :+:    :+:   */
+/*   stack_min.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:04:12 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/26 18:35:41 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:02:01 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
 /**
- * Return the biggest element of [stack]
+ * Return the smallest element of [stack]
  *
  * Return -1 if stack is empty.
  */
-int	stack_max(t_stack *stack)
+int	stack_min(t_stack *stack)
 {
 	int	i;
-	int	max;
+	int	min;
 
 	if (stack->item_count <= 0)
 		return (-1);
 	i = 0;
-	max = stack->content[i];
+	min = stack->content[i];
 	while (i < stack->item_count)
 	{
-		if (stack->content[i] > max)
+		if (stack->content[i] < min)
 		{
-			max = stack->content[i];
+			min = stack->content[i];
 		}
 		i++;
 	}
-	return (max);
+	return (min);
 }
