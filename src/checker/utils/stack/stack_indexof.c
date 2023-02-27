@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_error.c                                         :+:      :+:    :+:   */
+/*   stack_indexof.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 09:27:52 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/17 10:27:52 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/13 03:03:45 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/13 03:04:01 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "exception_management.h"
+#include "stack.h"
 
-void	ft_fatal_error(t_pushswap *pushswap, char *error_msg)
+/**
+ * Return the first index of [element] in [stack]
+ *
+ * Return -1 if [element] is not found.
+ */
+int	stack_indexof(int element, t_stack *stack)
 {
-	if (error_msg == NULL)
-		error_msg = "Error\n";
-	pushswap_free(pushswap);
-	ft_putstr_fd(error_msg, 2);
-	exit(1);
+	int	i;
+
+	i = 0;
+	while (stack->content[i] != element)
+	{
+		if (i >= stack->item_count)
+		{
+			return (-1);
+		}
+		i++;
+	}
+	return (i);
 }

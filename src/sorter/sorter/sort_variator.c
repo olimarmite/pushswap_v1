@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 21:41:38 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/26 22:49:02 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/27 14:12:38 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,8 @@ int	sort_variator(t_pushswap *pushswap)
 		if (pushswap_tmp.stack_a.capacity == 0
 			|| pushswap_tmp.stack_b.capacity == 0
 			|| pushswap_tmp.operations_list.capacity == 0)
-		{
-			pushswap_free(&pushswap_tmp);
-			return (-1);
-		}
+			return (pushswap_free(&pushswap_tmp), -1);
 		sort_main(&pushswap_tmp, i);
-		printf("-%d-", pushswap_tmp.operations_list.item_count);
 		if (i == 0 || pushswap_tmp.operations_list.item_count < best_cost)
 		{
 			best_cost = pushswap_tmp.operations_list.item_count;
@@ -41,6 +37,5 @@ int	sort_variator(t_pushswap *pushswap)
 		i++;
 	}
 	sort_main(pushswap, best_chunk_mod);
-	printf("\n _%d_ \n", pushswap->operations_list.item_count);
 	return (0);
 }
