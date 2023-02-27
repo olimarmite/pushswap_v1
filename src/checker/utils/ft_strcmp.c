@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.h                                           :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 17:41:34 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/27 18:57:27 by olimarti         ###   ########.fr       */
+/*   Created: 2022/11/14 22:52:48 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/27 18:47:30 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_H
-# define PARSER_H
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	long	i;
 
-# include "../utils/utils.h"
-# include "../pushswap/pushswap.h"
-# include "../exception_management/exception_management.h"
-
-int			parse_args(int argc, char **argv, t_pushswap *pushswap);
-t_operation	parse_operations(char *line);
-
-#endif
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != 0)
+	{
+		i++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}

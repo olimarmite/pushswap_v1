@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 00:09:41 by olimarti          #+#    #+#             */
-/*   Updated: 2022/12/09 15:09:40 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:39:28 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_vector	**get_fd_vector(int fd)
 	{
 		fd_vector = malloc(sizeof(t_vector));
 		if (!fd_vector)
-			return (NULL);
+			return (&fd_vector_lst[fd]);
 		fd_vector->capacity = 0;
 		fd_vector->size = 0;
 		fd_vector->buff = NULL;
@@ -122,18 +122,18 @@ char	*get_next_line(int fd)
 
 	end_line_pos = 0;
 	fd_vector = get_fd_vector(fd);
+	if (fd_vector == NULL)
+		return (NULL);
 	read_status = read_until_new_line(fd, fd_vector, &end_line_pos, &buff_out);
 	if (read_status == 1)
 		return (buff_out);
 	if (read_status == 2)
-		return (NULL);
+		return (free(*fd_vector), NULL);
 	buff_out = extract_str((*fd_vector)->buff, end_line_pos, 1);
-	if (((*fd_vector)->capacity > BUFFER_SIZE * 2)
-		&& ((*fd_vector)->capacity > 20))
+	if (buff_out == NULL)
 	{
-		if (realocate(fd_vector, end_line_pos) == 1)
-			return (NULL);
-		return (buff_out);
+		free((*fd_vector)->buff);
+		return (free(*fd_vector), NULL);
 	}
 	ft_memcpy((*fd_vector)->buff, (*fd_vector)->buff + end_line_pos,
 		(*fd_vector)->size - end_line_pos);

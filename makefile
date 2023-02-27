@@ -67,6 +67,7 @@ SRCS_BONUS := \
 	utils/get_next_line/get_next_line.c			\
 	exception_management/ft_error.c				\
 	parser/parse_args.c							\
+	parser/parse_operations.c					\
 	pushswap/pushswap_create.c					\
 	pushswap/pushswap_copy.c					\
 	pushswap/pushswap_operations_print.c		\
@@ -83,6 +84,7 @@ SRCS_BONUS := \
 	utils/ft_putstr.c							\
 	utils/ft_atoi.c								\
 	utils/ft_abs.c								\
+	utils/ft_strcmp.c							\
 	utils/stack/stack_insert.c					\
 	utils/stack/stack_first.c					\
 	utils/stack/stack_resize.c					\
@@ -100,6 +102,7 @@ SRCS_BONUS := \
 	utils/stack/stack_max.c						\
 	utils/stack/stack_min.c						\
 	utils/stack/stack_add_multiple.c			\
+	utils/stack/stack_is_sorted.c				\
 	utils/ft_max.c								\
 	utils/ft_min.c								\
 	utils/distance_from_zero_add.c

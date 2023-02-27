@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.h                                           :+:      :+:    :+:   */
+/*   stack_is_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 17:41:34 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/27 18:57:27 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/27 23:44:52 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/27 23:52:00 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSER_H
-# define PARSER_H
+#include "stack.h"
 
-# include "../utils/utils.h"
-# include "../pushswap/pushswap.h"
-# include "../exception_management/exception_management.h"
+int	stack_is_sorted(t_stack *stack)
+{
+	int	i;
+	int	max;
 
-int			parse_args(int argc, char **argv, t_pushswap *pushswap);
-t_operation	parse_operations(char *line);
-
-#endif
+	i = 0;
+	max = stack_first(stack);
+	while (i < stack->item_count)
+	{
+		if (stack->content[i] < max)
+			return (0);
+		max = stack->content[i];
+		i++;
+	}
+	return (1);
+}

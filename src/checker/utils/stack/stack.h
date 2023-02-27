@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 21:25:08 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/26 21:55:59 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:56:29 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ int		stack_min(t_stack *stack);
 int		stack_min_index(t_stack *stack);
 int		stack_add_multiple(int element, int count, t_stack *stack);
 t_stack	stack_copy(t_stack *stack_in);
+int		stack_is_sorted(t_stack *stack);
 
 #endif

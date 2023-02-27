@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 22:06:48 by olimarti          #+#    #+#             */
-/*   Updated: 2022/12/09 15:11:06 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:12:36 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # endif
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 15
 # endif
 
 # if BUFFER_SIZE < 0
