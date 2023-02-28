@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/27 18:51:46 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 01:24:08 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 # define INT_MAX 2147483647
 # include "stack/stack.h"
 # include "get_next_line/get_next_line.h"
-# include <stdio.h> //Todo : Forbiden functions
+# include "printf/ft_printf.h"
+# include <stdio.h>
 # include <unistd.h>
 # include <stddef.h>
 

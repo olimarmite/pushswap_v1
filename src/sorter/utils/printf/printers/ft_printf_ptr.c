@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_print.c                                      :+:      :+:    :+:   */
+/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 03:02:40 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 01:24:29 by olimarti         ###   ########.fr       */
+/*   Created: 2022/12/19 19:55:43 by olimarti          #+#    #+#             */
+/*   Updated: 2022/12/20 13:37:37 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "printers.h"
 
-/**
- * @brief Display [stack] in standard output
- *
- */
-void	stack_print(t_stack *stack)
+int	ft_printf_ptr(va_list *argptr)
 {
-	int	i;
+	unsigned long	current_arg;
 
-	i = 0;
-	ft_printf("[");
-	if (stack->item_count >= 1)
-	{
-		ft_printf("%i", stack->content[i]);
-		i++;
-	}
-	while (i < stack->item_count)
-	{
-		ft_printf(",%i", stack->content[i]);
-		i++;
-	}
-	ft_printf("]");
+	current_arg = va_arg(*argptr, unsigned long);
+	if (current_arg == 0)
+		return (ft_putstr("(nil)"));
+	ft_putstr("0x");
+	return (2 + ft_put_u_nbr_base(current_arg, 16, HEX_LC_ALPHABET));
 }

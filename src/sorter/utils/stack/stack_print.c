@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 03:02:40 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/13 03:03:05 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 01:24:55 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	stack_print(t_stack *stack)
 	int	i;
 
 	i = 0;
-	printf("["); // TODO: Forbiden function
+	ft_printf("[");
 	if (stack->item_count >= 1)
 	{
-		printf("%i", stack->content[i]);
+		ft_printf("%i", stack->content[i]);
 		i++;
 	}
 	while (i < stack->item_count)
 	{
-		printf(",%i", stack->content[i]); // TODO: Forbiden function
+		ft_printf(",%i", stack->content[i]);
 		i++;
 	}
-	printf("]"); // TODO: Forbiden function
+	ft_printf("]");
 }

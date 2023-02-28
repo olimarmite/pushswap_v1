@@ -5,27 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 01:25:25 by olimarti         ###   ########.fr       */
+/*   Created: 2022/12/20 10:49:32 by olimarti          #+#    #+#             */
+/*   Updated: 2022/12/20 13:36:49 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-# define INT_MAX 2147483647
-# include "stack/stack.h"
-# include "printf/ft_printf.h"
-# include <stdio.h>
+# include <stddef.h>
 # include <unistd.h>
 
-void	*ft_memmove(int *dest, const int *src, size_t n);
-void	ft_putstr_fd(char *str, int fd);
-int		ft_isdigit(int c);
-int		ft_atoi(const char *nptr, int *nbr);
-int		ft_max(int nb_a, int nb_b);
-int		ft_min(int nb_a, int nb_b);
-int		distance_from_zero_add(int nb_in, int nb_add);
-int		ft_abs(int number);
+int	ft_putnbr_base(long n, long base, const char *base_alphabet);
+int	ft_put_u_nbr_base(unsigned long n, unsigned long base,
+		const char *base_alphabet);
+
+int	ft_putchar(const char c);
+int	ft_putstr(char *s);
 
 #endif

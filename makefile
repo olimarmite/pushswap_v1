@@ -36,7 +36,7 @@ SRCS := \
 	sorter/sort_variator.c						\
 	utils/ft_memmove.c							\
 	utils/ft_isdigit.c							\
-	utils/ft_putstr.c							\
+	utils/ft_putstr_fd.c						\
 	utils/ft_atoi.c								\
 	utils/ft_abs.c								\
 	utils/stack/stack_insert.c					\
@@ -58,7 +58,19 @@ SRCS := \
 	utils/stack/stack_add_multiple.c			\
 	utils/ft_max.c								\
 	utils/ft_min.c								\
-	utils/distance_from_zero_add.c
+	utils/distance_from_zero_add.c				\
+	utils/printf/utils/ft_putchar.c				\
+	utils/printf/utils/ft_putstr.c				\
+	utils/printf/utils/ft_putnbr_base.c			\
+	utils/printf/utils/ft_u_putnbr_base.c		\
+	utils/printf/ft_printf.c					\
+	utils/printf/printers/ft_printf_percent.c	\
+	utils/printf/printers/ft_printf_str.c		\
+	utils/printf/printers/ft_printf_u_int.c		\
+	utils/printf/printers/ft_printf_int.c		\
+	utils/printf/printers/ft_printf_chr.c		\
+	utils/printf/printers/ft_printf_ptr.c		\
+	utils/printf/printers/ft_printf_hex.c
 
 
 SRCS_BONUS := \
@@ -81,7 +93,7 @@ SRCS_BONUS := \
 	pushswap/pushswap_operations_reduce.c		\
 	utils/ft_memmove.c							\
 	utils/ft_isdigit.c							\
-	utils/ft_putstr.c							\
+	utils/ft_putstr_fd.c						\
 	utils/ft_atoi.c								\
 	utils/ft_abs.c								\
 	utils/ft_strcmp.c							\
@@ -105,7 +117,19 @@ SRCS_BONUS := \
 	utils/stack/stack_is_sorted.c				\
 	utils/ft_max.c								\
 	utils/ft_min.c								\
-	utils/distance_from_zero_add.c
+	utils/distance_from_zero_add.c				\
+	utils/printf/utils/ft_putchar.c				\
+	utils/printf/utils/ft_putstr.c				\
+	utils/printf/utils/ft_putnbr_base.c			\
+	utils/printf/utils/ft_u_putnbr_base.c		\
+	utils/printf/ft_printf.c					\
+	utils/printf/printers/ft_printf_percent.c	\
+	utils/printf/printers/ft_printf_str.c		\
+	utils/printf/printers/ft_printf_u_int.c		\
+	utils/printf/printers/ft_printf_int.c		\
+	utils/printf/printers/ft_printf_chr.c		\
+	utils/printf/printers/ft_printf_ptr.c		\
+	utils/printf/printers/ft_printf_hex.c
 
 SRCS := $(SRCS:%=$(SRC_DIR)/%)
 OBJS := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_print.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 03:02:40 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 01:24:29 by olimarti         ###   ########.fr       */
+/*   Created: 2022/12/19 20:26:21 by olimarti          #+#    #+#             */
+/*   Updated: 2022/12/20 12:12:00 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include "utils.h"
 
-/**
- * @brief Display [stack] in standard output
- *
- */
-void	stack_print(t_stack *stack)
+int	ft_putnbr_base(long n, long base, const char *base_alphabet)
 {
-	int	i;
+	int	out;
 
-	i = 0;
-	ft_printf("[");
-	if (stack->item_count >= 1)
+	out = 0;
+	if (n < 0)
 	{
-		ft_printf("%i", stack->content[i]);
-		i++;
+		ft_putchar('-');
+		n = n * -1;
+		out += 1;
 	}
-	while (i < stack->item_count)
+	if (n < base)
 	{
-		ft_printf(",%i", stack->content[i]);
-		i++;
+		ft_putchar(base_alphabet[n % base]);
+		out += 1;
 	}
-	ft_printf("]");
+	else
+	{
+		out = 1 + out + ft_putnbr_base(n / base, base, base_alphabet);
+		ft_putchar(base_alphabet[n % base]);
+	}
+	return (out);
 }

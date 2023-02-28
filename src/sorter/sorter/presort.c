@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 13:52:22 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 00:53:55 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 01:25:35 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	presort(int chunk_count, t_pushswap *pushswap)
 
 	if (pushswap->stack_a.item_count <= chunk_count)
 	{
-		chunk_count = 2;//pushswap->stack_a.item_count;
+		chunk_count = 2;
 	}
 	chunk_size = pushswap->stack_a.item_count / chunk_count;
 	chunk_a.max = pushswap->stack_a.item_count / 2;
