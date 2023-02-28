@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:35:20 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 00:45:14 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:59:18 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	pushswap_index_stack(&pushswap.stack_a);
-	stack_print(&pushswap.stack_a);
 	read_operations(&pushswap);
 	if (stack_is_sorted(&pushswap.stack_a) && pushswap.stack_b.item_count == 0)
 		ft_putstr_fd("OK\n", 1);
@@ -47,7 +46,6 @@ static void	read_operations(t_pushswap	*pushswap)
 	line = get_next_line(0);
 	while (line != 0)
 	{
-		printf("%s", line);
 		parsed_op = parse_operations(line);
 		if ((int)parsed_op == -1)
 		{
@@ -61,7 +59,6 @@ static void	read_operations(t_pushswap	*pushswap)
 		free(line);
 		line = get_next_line(0);
 	}
-	close(fd);
 }
 
 
