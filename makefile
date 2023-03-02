@@ -2,8 +2,8 @@ ifndef USE_BASIC_ERROR
 	USE_BASIC_ERROR=1
 endif
 
-NAME := pushswap
-NAME_BONUS := bonus
+NAME := push_swap
+NAME_BONUS := checker
 
 OBJ_COMMON_DIR := obj
 
@@ -148,10 +148,15 @@ DIR_DUP = mkdir -p $(@D)
 
 all : $(NAME)
 
+bonus : $(NAME_BONUS)
+
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 	$(info CREATED $@)
 
+$(NAME_BONUS): $(OBJS_BONUS)
+	$(CC) $(OBJS_BONUS) -o $(NAME_BONUS)
+	$(info CREATED $(NAME_BONUS))
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(DIR_DUP)
@@ -175,12 +180,9 @@ re:
 	$(MAKE) fclean
 	$(MAKE) all
 
-bonus: $(OBJS_BONUS)
-	$(CC) $(OBJS_BONUS) -o $(NAME_BONUS)
-	$(info CREATED $(NAME_BONUS))
 
-malloc_test: $(OBJS)
-	$(CC) $(OBJS) -fsanitize=undefined -rdynamic -o $@ -L. -lmallocator
+# malloc_test: $(OBJS)
+# 	$(CC) $(OBJS) -fsanitize=undefined -rdynamic -o $@ -L. -lmallocator
 
-.PHONY: clean fclean re
+.PHONY: clean fclean re bonus
 .SILENT:
