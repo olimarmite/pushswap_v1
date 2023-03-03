@@ -83,6 +83,7 @@ SRCS_CHECKER := \
 	main.c										\
 	get_next_line/get_next_line.c				\
 	get_next_line/get_next_line_utils.c			\
+	get_next_line/get_next_line_close.c			\
 	checker/exec_operation.c					\
 	checker/parse_operations.c					\
 	checker/read_operations.c
@@ -144,8 +145,8 @@ re:
 	$(MAKE) fclean
 	$(MAKE) all
 
-# malloc_test: $(OBJS_SORTER)
-# 	$(CC) $(OBJS_SORTER) -fsanitize=undefined -rdynamic -o $@ -L. -lmallocator
+# malloc_test:  $(OBJS_STATION) $(OBJS_SORTER)
+# 	$(CC) $(OBJS_STATION) $(OBJS_SORTER) -fsanitize=undefined -rdynamic -o $@ -L. -lmallocator
 
 .PHONY: clean fclean re bonus
 .SILENT:

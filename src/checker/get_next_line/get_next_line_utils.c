@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 00:09:37 by olimarti          #+#    #+#             */
-/*   Updated: 2022/12/09 14:39:11 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/03/03 20:06:08 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,12 @@ void	vector_resize_if_needed(t_vector *vector, size_t buff_size)
 
 void	free_vector(t_vector **vector)
 {
-	free((*vector)->buff);
-	free(*vector);
-	*vector = NULL;
+	if (*vector != NULL)
+	{
+		free((*vector)->buff);
+		free(*vector);
+		*vector = NULL;
+	}
 }
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)

@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 19:23:54 by olimarti          #+#    #+#             */
-/*   Updated: 2023/03/03 19:24:11 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:57:29 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	read_operations(t_pushswap	*pushswap)
 		if ((int)parsed_op == -1)
 		{
 			free(line);
+			get_next_line_close(0);
 			ft_fatal_error(pushswap, "Invalid Operation");
 		}
 		else
@@ -33,4 +34,5 @@ void	read_operations(t_pushswap	*pushswap)
 		free(line);
 		line = get_next_line(0);
 	}
+	get_next_line_close(0);
 }

@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 00:09:41 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 00:39:28 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/03/03 20:08:29 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,12 +128,12 @@ char	*get_next_line(int fd)
 	if (read_status == 1)
 		return (buff_out);
 	if (read_status == 2)
-		return (free(*fd_vector), NULL);
+		return (free_vector(fd_vector), NULL);
 	buff_out = extract_str((*fd_vector)->buff, end_line_pos, 1);
 	if (buff_out == NULL)
 	{
-		free((*fd_vector)->buff);
-		return (free(*fd_vector), NULL);
+		free_vector(fd_vector);
+		return (NULL);
 	}
 	ft_memcpy((*fd_vector)->buff, (*fd_vector)->buff + end_line_pos,
 		(*fd_vector)->size - end_line_pos);
