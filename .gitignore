@@ -7,11 +7,11 @@ obj
 
 # binaries
 a.out
-pushswap
-bonus
+./pushswap
+./bonus
 
 # mallocator
 ft_mallocator
 
 # checker_42
-checker_linux
+./checker_linux
