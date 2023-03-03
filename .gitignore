@@ -8,10 +8,11 @@ obj
 # binaries
 a.out
 ./pushswap
-./bonus
+./checker
 
 # mallocator
 ft_mallocator
 
 # checker_42
 ./checker_linux
+./checker_Mac

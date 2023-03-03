@@ -6,14 +6,14 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:06:57 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/26 22:14:04 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:18:32 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SORTER_H
 # define SORTER_H
 
-#include "../pushswap_station/pushswap_station.h"
+# include "../pushswap_station/pushswap_station.h"
 
 typedef struct s_chunk
 {

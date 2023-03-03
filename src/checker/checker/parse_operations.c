@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   parse_operations.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 01:24:08 by olimarti         ###   ########.fr       */
+/*   Created: 2023/03/03 19:23:50 by olimarti          #+#    #+#             */
+/*   Updated: 2023/03/03 19:24:39 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_UTILS_H
-# define CHECKER_UTILS_H
+#include "../checker.h"
 
-# include "get_next_line/get_next_line.h"
-# include <stdio.h>
-# include <unistd.h>
-# include <stddef.h>
+t_operation	parse_operations(char *line)
+{
+	int			i;
+	static char	*operations[11] = {
+		"ra\n",
+		"rb\n",
+		"rr\n",
+		"rra\n",
+		"rrb\n",
+		"rrr\n",
+		"pa\n",
+		"pb\n",
+		"sa\n",
+		"sb\n",
+		"ss\n"};
 
-#endif
+	i = 0;
+	while (i < 11)
+	{
+		if (ft_strcmp(operations[i], line) == 0)
+		{
+			return ((t_operation) i);
+		}
+		i++;
+	}
+	return (-1);
+}

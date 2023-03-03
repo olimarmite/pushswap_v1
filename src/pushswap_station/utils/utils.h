@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:19:07 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/28 01:25:25 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/03/03 19:30:27 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int		ft_max(int nb_a, int nb_b);
 int		ft_min(int nb_a, int nb_b);
 int		distance_from_zero_add(int nb_in, int nb_add);
 int		ft_abs(int number);
-int     ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

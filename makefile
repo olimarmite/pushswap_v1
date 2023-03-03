@@ -81,8 +81,11 @@ SRCS_SORTER := \
 
 SRCS_CHECKER := \
 	main.c										\
-	utils/get_next_line/get_next_line.c			\
-	utils/get_next_line/get_next_line_utils.c
+	get_next_line/get_next_line.c				\
+	get_next_line/get_next_line_utils.c			\
+	checker/exec_operation.c					\
+	checker/parse_operations.c					\
+	checker/read_operations.c
 
 SRCS_STATION := $(SRCS_STATION:%=$(SRC_STATION_DIR)/%)
 OBJS_STATION := $(SRCS_STATION:$(SRC_STATION_DIR)/%.c=$(OBJ_STATION_DIR)/%.o)
@@ -134,13 +137,12 @@ clean:
 	$(info DELETED $(OBJ_SORTER_DIR) $(OBJ_CHECKER_DIR) $(OBJ_COMMON_DIR))
 
 fclean: clean
-	$(RM) $(NAME) $(NAME_BONUS)
-	$(info DELETED $(NAME) $(NAME_BONUS))
+	$(RM) $(NAME) $(NAME_CHECKER)
+	$(info DELETED $(NAME) $(NAME_CHECKER))
 
 re:
 	$(MAKE) fclean
 	$(MAKE) all
-
 
 # malloc_test: $(OBJS_SORTER)
 # 	$(CC) $(OBJS_SORTER) -fsanitize=undefined -rdynamic -o $@ -L. -lmallocator

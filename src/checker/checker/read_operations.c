@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   read_operations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 16:39:10 by olimarti          #+#    #+#             */
-/*   Updated: 2023/03/03 19:31:46 by olimarti         ###   ########.fr       */
+/*   Created: 2023/03/03 19:23:54 by olimarti          #+#    #+#             */
+/*   Updated: 2023/03/03 19:24:11 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "../checker.h"
 
-# include "get_next_line/get_next_line.h"
-# include "../pushswap_station/pushswap_station.h"
+void	read_operations(t_pushswap	*pushswap)
+{
+	char		*line;
+	t_operation	parsed_op;
 
-t_operation	parse_operations(char *line);
-void		exec_operation(t_operation operation, t_pushswap *pushswap);
-void		read_operations(t_pushswap	*pushswap);
-
-#endif
+	line = get_next_line(0);
+	while (line != 0)
+	{
+		parsed_op = parse_operations(line);
+		if ((int)parsed_op == -1)
+		{
+			free(line);
+			ft_fatal_error(pushswap, "Invalid Operation");
+		}
+		else
+		{
+			exec_operation(parsed_op, pushswap);
+		}
+		free(line);
+		line = get_next_line(0);
+	}
+}
