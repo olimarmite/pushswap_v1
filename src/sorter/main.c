@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap_station.h"
+#include "sorter.h"
 
 int	main(int argc, char **argv)
 {

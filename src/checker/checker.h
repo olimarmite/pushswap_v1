@@ -14,8 +14,8 @@
 # define CHECKER_H
 
 # include "utils/utils.h"
-# include "pushswap/pushswap.h"
-# include "exception_management/exception_management.h"
-# include "parser/parser.h"
+# include "../pushswap_station/pushswap_station.h"
+
+t_operation	parse_operations(char *line);
 
 #endif

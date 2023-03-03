@@ -13,8 +13,7 @@
 #ifndef SORTER_H
 # define SORTER_H
 
-# include "../utils/utils.h"
-# include "../pushswap/pushswap.h"
+#include "../pushswap_station/pushswap_station.h"
 
 typedef struct s_chunk
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorter.h"
+#include "../sorter.h"
 
 int	sort_variator(t_pushswap *pushswap)
 {

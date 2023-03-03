@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorter.h"
+#include "../sorter.h"
 
 void	presort(int chunk_count, t_pushswap *pushswap)
 {

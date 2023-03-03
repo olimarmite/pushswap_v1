@@ -42,5 +42,6 @@ int		stack_min(t_stack *stack);
 int		stack_min_index(t_stack *stack);
 int		stack_add_multiple(int element, int count, t_stack *stack);
 t_stack	stack_copy(t_stack *stack_in);
+int		stack_is_sorted(t_stack *stack);
 
 #endif

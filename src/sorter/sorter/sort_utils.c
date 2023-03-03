@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorter.h"
+#include "../sorter.h"
 
 t_move	get_t_move(int index_a, int index_b)
 {

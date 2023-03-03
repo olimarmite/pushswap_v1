@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap_operations_add.c                          :+:      :+:    :+:   */
+/*   pushswap_station.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 10:19:19 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/17 10:29:13 by olimarti         ###   ########.fr       */
+/*   Created: 2023/02/27 16:09:29 by olimarti          #+#    #+#             */
+/*   Updated: 2023/02/27 17:43:31 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#ifndef PUSHSWAP_STATION_H
+# define PUSHSWAP_STATION_H
 
-/**
- * Add [operation] to operations
- *
- * Return 0 if success
- * Return -1 if error
- */
-int	pushswap_operations_add(t_operation operation, t_pushswap *pushswap)
-{
-	if (stack_add(operation, &pushswap->operations_list) == 0)
-		return (0);
-	else
-		return (-1);
-}
+# include "utils/utils.h"
+# include "pushswap/pushswap.h"
+# include "exception_management/exception_management.h"
+# include "parser/parser.h"
+
+#endif

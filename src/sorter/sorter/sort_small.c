@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorter.h"
+#include "../sorter.h"
 
 void	sort_small(t_pushswap *pushswap)
 {

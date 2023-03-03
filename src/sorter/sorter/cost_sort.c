@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorter.h"
+#include "../sorter.h"
 
 void	cost_based_sort(t_pushswap *pushswap)
 {

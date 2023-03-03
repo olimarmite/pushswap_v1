@@ -88,3 +88,31 @@ static void	exec_operation(t_operation operation, t_pushswap *pushswap)
 		pushswap_swap(stack_id_b, pushswap);
 	}
 }
+
+t_operation	parse_operations(char *line)
+{
+	int			i;
+	static char	*operations[11] = {
+		"ra\n",
+		"rb\n",
+		"rr\n",
+		"rra\n",
+		"rrb\n",
+		"rrr\n",
+		"pa\n",
+		"pb\n",
+		"sa\n",
+		"sb\n",
+		"ss\n"};
+
+	i = 0;
+	while (i < 11)
+	{
+		if (ft_strcmp(operations[i], line) == 0)
+		{
+			return ((t_operation) i);
+		}
+		i++;
+	}
+	return (-1);
+}

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sorter.h"
+#include "../sorter.h"
 
 int	sort_main(t_pushswap *pushswap, int chunk_count_modifier)
 {
