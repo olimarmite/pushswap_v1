@@ -22,13 +22,15 @@ int	stack_indexof(int element, t_stack *stack)
 	int	i;
 
 	i = 0;
+	if (i >= stack->item_count)
+		return (-1);
 	while (stack->content[i] != element)
 	{
+		i++;
 		if (i >= stack->item_count)
 		{
 			return (-1);
 		}
-		i++;
 	}
 	return (i);
 }

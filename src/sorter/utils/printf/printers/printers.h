@@ -13,6 +13,7 @@
 #ifndef PRINTERS_H
 # define PRINTERS_H
 
+# include <stdarg.h>
 # include <stdio.h>
 # include "../utils/utils.h"
 
