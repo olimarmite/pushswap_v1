@@ -6,7 +6,7 @@
 /*   By: olimarti <olimarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:07:48 by olimarti          #+#    #+#             */
-/*   Updated: 2023/02/26 22:48:16 by olimarti         ###   ########.fr       */
+/*   Updated: 2023/03/04 04:44:55 by olimarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	sort_main(t_pushswap *pushswap, int chunk_count_modifier)
 	int	len;
 	int	i;
 
+	if (stack_is_sorted(&pushswap->stack_a))
+		return (0);
 	if (pushswap->stack_a.item_count <= 5)
 	{
 		sort_small(pushswap);
